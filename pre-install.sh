@@ -32,10 +32,7 @@ mysql -uicingaweb2 -picingaweb2 icingaweb2 < /usr/share/doc/icingaweb2/schema/my
 mysql -uicingaweb2 -picingaweb2 icingaweb2 -e "INSERT INTO icingaweb_user (name, active, password_hash) VALUES ('webadmin', 1, '\$1\$y.0MLecb\$JbJUsaeoLnc8U3kUW1tiS1');"
 
 # Cofiguring the timezone in php.ini file 
-sed -i 's/;date.timezone =/date.timezone = UTC/g' /etc/php.ini
-
-
-
+sed -i 's/;date.timezone =/date.timezone = Asia\/Riyadh/g' /etc/php.ini
 
 pkill mysqld
 chown -R mysql:mysql /var/lib/mysql/
