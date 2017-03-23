@@ -69,6 +69,6 @@ restorecon -R -v /etc/icingaweb2
 #Enbaling the services at boot & making sure they are started
 echo "Enbaling the services at boot & making sure they are started"
 echo "######################################################################################################"
-systemctl enable maraidb; systemctl restart mariadb
+systemctl enable mariadb; systemctl restart mariadb
 systemctl enable icinga2; systemctl restart icinga2
 systemctl enable httpd; systemctl restart httpd
