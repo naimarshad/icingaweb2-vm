@@ -1,0 +1,42 @@
+version: '2'
+services:
+  apache:
+    build: ./apache/.
+    networks:
+      ifmvbr0:
+        ipv4_address: 192.168.1.25
+#      default: {}
+    ports:
+      - 80
+    domainname: localdomain.local
+    hostname: apache
+    container_name: apache
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://192.168.1.20:514"
+
+  mysql:
+    build: ./mysql/.
+    networks:
+      ifmvbr0:
+        ipv4_address: 192.168.1.30
+#      default: {}
+    ports:
+      - 3306
+    domainname: localdomain.local
+    hostname: mysql
+    container_name: mysql
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://192.168.1.20:514"
+networks:
+  ifmvbr0:
+    driver: macvlan
+    driver_opts:
+      parent: ens160
+    ipam:
+      config:
+      - subnet: 192.168.1.0/24
+        gateway: 192.168.1.254
