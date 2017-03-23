@@ -41,7 +41,7 @@ mysql -uroot -prootsrv007 -e "GRANT ALL PRIVILEGES ON icinga2.* TO 'icinga2'@'lo
 mysql -uroot -prootsrv007 icinga2 < /usr/share/icinga2-ido-mysql/schema/mysql.sql
 mysql -uroot -prootsrv007 -e "CREATE DATABASE IF NOT EXISTS icingaweb2 ; GRANT ALL ON icingaweb2.* TO icingaweb2@localhost IDENTIFIED BY 'icingaweb2';"
 mysql -uicingaweb2 -picingaweb2 icingaweb2 < /usr/share/doc/icingaweb2/schema/mysql.schema.sql
-mysql -uicingaweb2 -picingaweb2 icingaweb2 -e "INSERT INTO icingaweb_user (name, active, password_hash) VALUES ('webadmin', 1, '\$1\$y.0MLecb\$JbJUsaeoLnc8U3kUW1tiS1');"
+mysql -uicingaweb2 -picingaweb2 icingaweb2 -e "INSERT INTO icingaweb_user (name, active, password_hash) VALUES ('webadmin', 1, '\$1\$Ncq7Am5z\$AZ.88KH3RleyxDDh6vUr11');"
 
 #Cofiguring the timezone in php.ini file
 echo" Cofiguring the timezone in php.ini file"
